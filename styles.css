@@ -100,7 +100,6 @@ input[type="checkbox"] {
 }
 
 .actions {
-  margin-top: 10px;
   display: flex;
   justify-content: flex-start;
 }
@@ -127,6 +126,11 @@ details summary {
   margin: 4px 0;
 }
 
+.empty-card {
+  visibility: hidden;
+  border: none;
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
@@ -135,5 +139,9 @@ details summary {
   .summary-bar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .empty-card {
+    display: none;
   }
 }

@@ -1,82 +1,284 @@
-<div class="container">
-  <h1>Response-Adapted Surgery in Sinonasal Cancer</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Response-Adapted Surgery SMS Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Response-Adapted Surgery in Sinonasal Cancer</h1>
 
-  <div class="summary-bar">
-    <div class="total-box">Total Score: <span id="totalProposed">0</span></div>
-    <div class="actions">
-      <button id="exportBtn">Export to Excel</button>
+    <div class="summary-bar">
+      <div class="total-box">Total Score: <span id="totalProposed">0</span></div>
+      <div class="actions">
+        <button id="exportBtn">Export to Excel</button>
+      </div>
     </div>
+
+    <div class="grid">
+      <!-- Structures Resected -->
+      <div class="supersection">Structures Resected</div>
+
+      <div class="card">
+        <div class="card-title">Skull Base</div>
+
+        <div class="option-row">
+          <label for="sb0">
+            <span class="option-text">Not required (0)</span>
+            <span class="option-input"><input id="sb0" type="radio" name="sb-p" value="0" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="sb1">
+            <span class="option-text">Anterior skull base bone (1)</span>
+            <span class="option-input"><input id="sb1" type="radio" name="sb-p" value="1" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="sb2">
+            <span class="option-text">Dura (2)</span>
+            <span class="option-input"><input id="sb2" type="radio" name="sb-p" value="2" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="sb3">
+            <span class="option-text">Brain (3)</span>
+            <span class="option-input"><input id="sb3" type="radio" name="sb-p" value="3" /></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Orbit</div>
+
+        <div class="option-row">
+          <label for="or0">
+            <span class="option-text">Not required (0)</span>
+            <span class="option-input"><input id="or0" type="radio" name="or-p" value="0" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="or1">
+            <span class="option-text">Medial wall resection (1)</span>
+            <span class="option-input"><input id="or1" type="radio" name="or-p" value="1" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="or2">
+            <span class="option-text">Periorbital / extraconal fat (2)</span>
+            <span class="option-input"><input id="or2" type="radio" name="or-p" value="2" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="or6">
+            <span class="option-text">Orbital exenteration (6)</span>
+            <span class="option-input"><input id="or6" type="radio" name="or-p" value="6" /></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Maxilla</div>
+
+        <div class="option-row">
+          <label for="mx0">
+            <span class="option-text">Not required (0)</span>
+            <span class="option-input"><input id="mx0" type="radio" name="mx-p" value="0" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="mx1">
+            <span class="option-text">Medial maxillectomy (1)</span>
+            <span class="option-input"><input id="mx1" type="radio" name="mx-p" value="1" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="mx2">
+            <span class="option-text">Inferior maxillectomy – palate unilateral (2)</span>
+            <span class="option-input"><input id="mx2" type="radio" name="mx-p" value="2" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="mx3">
+            <span class="option-text">Inferior maxillectomy – palate bilateral (3)</span>
+            <span class="option-input"><input id="mx3" type="radio" name="mx-p" value="3" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="mx4">
+            <span class="option-text">*Major floor of orbit resection (4)</span>
+            <span class="option-input"><input id="mx4" type="radio" name="mx-p" value="4" /></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Skin Resection</div>
+
+        <div class="option-row">
+          <label for="sk0">
+            <span class="option-text">Not required (0)</span>
+            <span class="option-input"><input id="sk0" type="radio" name="sk-p" value="0" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="sk2">
+            <span class="option-text">Skin of face; cheek/forehead (2)</span>
+            <span class="option-input"><input id="sk2" type="radio" name="sk-p" value="2" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="sk3">
+            <span class="option-text">Partial rhinectomy (3)</span>
+            <span class="option-input"><input id="sk3" type="radio" name="sk-p" value="3" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="sk5">
+            <span class="option-text">Total rhinectomy (5)</span>
+            <span class="option-input"><input id="sk5" type="radio" name="sk-p" value="5" /></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Exposure -->
+      <div class="supersection">Exposure</div>
+
+      <div class="card">
+        <div class="card-title">Facial</div>
+
+        <div class="option-row">
+          <label for="ef0">
+            <span class="option-text">Endoscopic resection (0)</span>
+            <span class="option-input"><input id="ef0" type="radio" name="ef-p" value="0" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="ef2">
+            <span class="option-text">Trans-facial incision +/- cheek flap (2)</span>
+            <span class="option-input"><input id="ef2" type="radio" name="ef-p" value="2" /></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Cranial</div>
+
+        <div class="option-row">
+          <label for="ec0">
+            <span class="option-text">Endoscopic (0)</span>
+            <span class="option-input"><input id="ec0" type="radio" name="ec-p" value="0" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="ec3">
+            <span class="option-text">Bicoronal craniotomy (3)</span>
+            <span class="option-input"><input id="ec3" type="radio" name="ec-p" value="3" /></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Reconstruction -->
+      <div class="supersection">Reconstruction</div>
+
+      <div class="card">
+        <div class="card-title">Regional Flap</div>
+
+        <div class="option-row">
+          <label for="rf0">
+            <span class="option-text">Not required (0)</span>
+            <span class="option-input"><input id="rf0" type="radio" name="rf-p" value="0" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="rf1a">
+            <span class="option-text">Nasoseptal flap (1)</span>
+            <span class="option-input"><input id="rf1a" type="radio" name="rf-p" value="1" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="rf1b">
+            <span class="option-text">Pericranial flap (1)</span>
+            <span class="option-input"><input id="rf1b" type="radio" name="rf-p" value="1" /></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Free Flap</div>
+
+        <div class="option-row">
+          <label for="ff0">
+            <span class="option-text">Not required (0)</span>
+            <span class="option-input"><input id="ff0" type="checkbox" name="ff-p" value="0" data-none="true" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="ff3">
+            <span class="option-text">Soft tissue (3)</span>
+            <span class="option-input"><input id="ff3" type="checkbox" name="ff-p" value="3" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="ff4">
+            <span class="option-text">Bone (4)</span>
+            <span class="option-input"><input id="ff4" type="checkbox" name="ff-p" value="4" /></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Lymph Node Basin Management -->
+      <div class="supersection">Lymph Node Basin Management</div>
+
+      <div class="card">
+        <div class="card-title">Neck Dissection</div>
+
+        <div class="option-row">
+          <label for="nd0">
+            <span class="option-text">Not required (0)</span>
+            <span class="option-input"><input id="nd0" type="radio" name="nd-p" value="0" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="nd1">
+            <span class="option-text">Unilateral (1)</span>
+            <span class="option-input"><input id="nd1" type="radio" name="nd-p" value="1" /></span>
+          </label>
+        </div>
+        <div class="option-row">
+          <label for="nd2">
+            <span class="option-text">Bilateral (2)</span>
+            <span class="option-input"><input id="nd2" type="radio" name="nd-p" value="2" /></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card empty-card" aria-hidden="true"></div>
+    </div>
+
+    <details class="footnotes">
+      <summary>Footnotes and disclaimer</summary>
+      <p>* Major floor of orbit resection is defined as greater than 50%.</p>
+      <p>** Free flap is designated with individual points; if multiple free flaps are used, add points.</p>
+
+      <div class="disclaimer">
+        <p>
+          <strong>Disclaimer:</strong> Please be advised that this classification system is currently an
+          investigational tool. As such, it should not be used to guide patient care or prognosis in a
+          clinical setting. It is intended solely for educational or general informational purposes and
+          does not constitute medical advice, diagnosis, or a treatment plan. It should not replace
+          professional clinical judgment or consultation with a qualified healthcare provider. Usage of
+          this tool implies acceptance that the creators are not liable for its application. We make no
+          warranties regarding the accuracy, completeness, or currency of the data, as medical evidence
+          is dynamic and subject to change. User data is not recorded or tracked.
+        </p>
+      </div>
+    </details>
   </div>
 
-  <div class="grid">
-    <div class="supersection">Structures Resected</div>
-
-    <div class="card">
-      <div class="card-title">Skull Base</div>
-      <div class="option-row">
-        <label>
-          <span class="option-text">Not required (0)</span>
-          <span class="option-input"><input type="radio" name="sb-p" value="0"></span>
-        </label>
-      </div>
-      <div class="option-row">
-        <label>
-          <span class="option-text">Anterior skull base bone (1)</span>
-          <span class="option-input"><input type="radio" name="sb-p" value="1"></span>
-        </label>
-      </div>
-      <div class="option-row">
-        <label>
-          <span class="option-text">Dura (2)</span>
-          <span class="option-input"><input type="radio" name="sb-p" value="2"></span>
-        </label>
-      </div>
-      <div class="option-row">
-        <label>
-          <span class="option-text">Brain (3)</span>
-          <span class="option-input"><input type="radio" name="sb-p" value="3"></span>
-        </label>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Orbit</div>
-      <div class="option-row">
-        <label>
-          <span class="option-text">Not required (0)</span>
-          <span class="option-input"><input type="radio" name="or-p" value="0"></span>
-        </label>
-      </div>
-      <div class="option-row">
-        <label>
-          <span class="option-text">Medial wall resection (1)</span>
-          <span class="option-input"><input type="radio" name="or-p" value="1"></span>
-        </label>
-      </div>
-      <div class="option-row">
-        <label>
-          <span class="option-text">Periorbital / extraconal fat (2)</span>
-          <span class="option-input"><input type="radio" name="or-p" value="2"></span>
-        </label>
-      </div>
-      <div class="option-row">
-        <label>
-          <span class="option-text">Orbital exenteration (6)</span>
-          <span class="option-input"><input type="radio" name="or-p" value="6"></span>
-        </label>
-      </div>
-    </div>
-
-    <!-- Repeat same card pattern for Maxilla, Skin, Facial, Cranial, etc. -->
-  </div>
-
-  <details class="footnotes">
-    <summary>Footnotes and disclaimer</summary>
-    <p>* Major floor of orbit resection is defined as greater than 50%.</p>
-    <p>** Free flap is designated with individual points; if multiple free flaps are used, add points.</p>
-
-    <div class="disclaimer">
-      <p><strong>Disclaimer:</strong> Please be advised that this classification system is currently an investigational tool...</p>
-    </div>
-  </details>
-</div>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

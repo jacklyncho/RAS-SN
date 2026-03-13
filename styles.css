@@ -6,28 +6,27 @@ body {
   font-family: Arial, sans-serif;
   background: #fff;
   margin: 0;
-  padding: 12px;
+  padding: 10px;
   color: #111;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 h1 {
   text-align: center;
-  font-size: 1.2rem;
-  margin: 0 0 10px 0;
+  font-size: 1.15rem;
+  margin: 0 0 8px 0;
 }
 
 .summary-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-  padding: 8px 10px;
+  margin-bottom: 8px;
+  padding: 6px 8px;
   border: 1px solid #888;
   background: #f2f2f2;
   border-radius: 6px;
@@ -41,14 +40,14 @@ h1 {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
 }
 
 .supersection {
   grid-column: 1 / -1;
   background: #d6d6d6;
   font-weight: 700;
-  padding: 6px 10px;
+  padding: 5px 8px;
   border: 1px solid #888;
   border-radius: 6px;
 }
@@ -63,18 +62,19 @@ h1 {
 .card-title {
   background: #e0e0e0;
   font-weight: bold;
-  padding: 6px 10px;
+  padding: 5px 8px;
   border-bottom: 1px solid #888;
+  font-size: 0.9rem;
 }
 
 .option-row {
   display: grid;
-  grid-template-columns: 1fr 44px;
+  grid-template-columns: auto 22px;
   align-items: center;
-  gap: 8px;
-  padding: 5px 10px;
+  gap: 4px;
+  padding: 4px 8px;
   border-bottom: 1px solid #eee;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .option-row:last-child {
@@ -86,7 +86,7 @@ h1 {
 }
 
 .option-text {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .option-input {
@@ -95,23 +95,13 @@ h1 {
 
 input[type="radio"],
 input[type="checkbox"] {
-  transform: scale(0.9);
+  transform: scale(0.85);
   margin: 0;
 }
 
-.actions {
-  display: flex;
-  justify-content: flex-start;
-}
-
-button {
-  padding: 7px 12px;
-  font-size: 0.9rem;
-}
-
 details {
-  margin-top: 8px;
-  font-size: 0.78rem;
+  margin-top: 6px;
+  font-size: 0.75rem;
   color: #444;
 }
 
@@ -123,7 +113,7 @@ details summary {
 
 .footnotes p,
 .disclaimer p {
-  margin: 4px 0;
+  margin: 3px 0;
 }
 
 .empty-card {
@@ -134,11 +124,6 @@ details summary {
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
-  }
-
-  .summary-bar {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .empty-card {
